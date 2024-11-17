@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main - Open source software</title>
+    <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+    <header id="header" class="fixed-top.header-transparent">
+        <div class="container d-flex align-items-center justify-content-between position-relative">
+    
+          <div class="logo">
+            <h1 class="text-light"><a href="index.html"><span>Open source software</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+          </div>
+    
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link scrollto active" href="http://localhost/oss/main.html">Home</a></li>
+              <li><a class="nav-link scrollto" href="http://localhost/oss/dashboard.html">Dashboard</a></li>
+              <li><a class="nav-link scrollto" href="#services">Rating & Reviews</a></li>
+              
+              <li class="dropdown megamenu"><span>Apps</span> <i class="bi bi-chevron-down"></i>
+                <ul>
+                  <li>
+                    <strong>Browsers</strong>
+                    <a href="http://localhost/oss/images/MozillaFirefox.html">Mozilla FireFox</a>
+                    <a href="http://localhost/oss/images/Tor.html">Tor Browser</a>
+                    <a href="http://localhost/oss/images/brave.html">Brave</a>
+                  </li>
+                  <li>
+                    <strong>Multimedia</strong>
+                    <a href="http://localhost/oss/images/vlc.html">VLC media player</a>
+                    <a href="http://localhost/oss/images/obs.html">OBS Studio</a>
+                    <a href="http://localhost/oss/images/Mpv.html">MPV player</a>
+                  </li>
+                  <li>
+                    <strong>Development & IT</strong>
+                    <a href="http://localhost/oss/images/Visualstudiocode.html">Visual Studio Code</a>
+                    <a href="http://localhost/oss/images/python.html">Python</a>
+                    <a href="http://localhost/oss/images/mysql.html">MySQL</a>
+                  </li>
+                  <li>
+                    <strong>Productivity</strong>
+                    <a href="http://localhost/oss/images/office.html">Microsoft Office</a>
+                    <a href="http://localhost/oss/images/filezilla.html">FileZilla</a>
+                    <a href="http://localhost/oss/images/freecad.html">FreeCAD</a>
+                  </li>
+                  <li>
+                    <strong>Editor</strong>
+                    <a href="http://localhost/oss/images/openshot.html">OpenShot</a>
+                    <a href="http://localhost/oss/images/gimp.html">GIMP</a>
+                    <a href="http://localhost/oss/images/avidemux.html">Avidemux</a>
+                  </li>
+                  <li>
+                    <strong>OS</strong>
+                    <a href="http://localhost/oss/images/linux.html">Linux</a>
+                    <a href="http://localhost/oss/images/ubuntu.html">Ubuntu</a>
+                    <a href="http://localhost/oss/images/chromeos.html">ChromeOS</a>
+                  </li>
+
+                </ul>
+              </li>
+              <li class="dropdown megamenu"><span>Profile</span> <i class="bi bi-chevron-down"></i>
+                <ul>
+                  <li>
+                    <strong> <?php
+                      $conn = new mysqli('localhost', 'root', '', 'oss');
+                      if ($conn->connect_error)
+{
+    die('Connection Failed :' .$conn->connect_error);
+}
+$sql = "SELECT Username FROM signup";
+$result = $conn->query($sql);
+
+if($result->Username>0)
+{
+  while($row = $result -> fetch_assoc())
+  {
+    echo $row["Username"];
+  }
+
+}
+else{
+  echo "Invalid";
+}
+$conn-> close();
+?>
+                    </strong>
+                   
+                  </li>
+                  <li>
+                    
+                    <a href="http://localhost/oss/images/vlc.html">Edit profile</a>
+                    
+                  </li>
+                  <li>
+                    <a href="http://localhost/oss/images/Visualstudiocode.html">Logout</a>
+                    
+                  </li>
+                </ul>
+              </li>
+            
+            
+          </nav><!-- .navbar -->
+    
+        </div>
+      </header><!-- End Header -->
+
+    <body style="background-color: black;">
+      <section id="hero">
+        <div class="hero-container" data-aos="fade-up">
+          <h1>Welcome to Squad</h1>
+          <h2>We are team of talented designers making websites with Bootstrap</h2>
+          <a href="#about" class="btn-get-started scrollto"><i class="bx bx-chevrons-down"></i></a>
+        </div>
+      </section><!-- End Hero -->
+    
+    
+    
+</body>
+</html>
